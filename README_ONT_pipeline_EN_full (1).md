@@ -36,7 +36,7 @@ The workflow is implemented using Nextflow, enabling reproducibility, scalabilit
 | QUAST     | Assembly quality assessment                     | Optional reference genome                                                                            | https://github.com/ablab/quast |
 | Prokka    | Bacterial genome annotation                     | Bundled Prokka DB or custom DB                                                                      | https://github.com/tseemann/prokka |
 | Kraken2   | **Primary taxonomic classification**            | Kraken2 database (Standard / MiniKraken2 / custom; ~16–20 GB for smaller DBs)                        | https://github.com/DerrickWood/kraken2 |
-| GTDB-Tk   | Optional high-resolution taxonomy               | **GTDB Reference Database (80–200+ GB)** downloaded separately                                       | https://github.com/Ecogenomics/GTDBTk |
+| GTDB-Tk   | Optional high-resolution taxonomy               | **GTDB Reference Database (>100 GB)** downloaded separately                                       | https://github.com/Ecogenomics/GTDBTk |
 | Abricate  | AMR & virulence gene screening                  | CARD / VFDB / ResFinder, etc.                                                                        | https://github.com/tseemann/abricate |
 | Bakta     | High-quality bacterial annotation               | Bakta reference database                                                                             | https://github.com/oschwengers/bakta |
 
@@ -47,8 +47,8 @@ The workflow is implemented using Nextflow, enabling reproducibility, scalabilit
 ### Kraken2 Database (recommended default)
 
 Options:
-- **MiniKraken2 (16–20 GB)** → easiest to download & reuse  
-- Standard Kraken2 DB (50–70 GB)  
+- **MiniKraken2 (16GB)** → easiest to download & reuse  
+- Standard Kraken2 DB (70 GB)  
 - Custom DB (user selected genomes)
 
 Example:
@@ -58,7 +58,7 @@ KRAKEN2_DB=/path/to/kraken2_db
 
 ### GTDB-Tk Database (optional)
 
-- Very large: **80–200+ GB**  
+- Very large: **>100 GB**  
 - Only recommended when high-resolution taxonomy is required  
 - Must be mounted into Docker/Singularity container  
 
@@ -115,7 +115,6 @@ results/gtdbtk/
 ---
 
 ## 4. Pipeline Execution
-
 
 ### Docker
 
@@ -268,9 +267,5 @@ longread-ont-bacterial-id/
 
 ## 7. Recommendations for Extension
 
-- Add **CheckM** or **BUSCO** for genome completeness estimation  
-- Add **Trycycler** for multi-assembly consensus (if multiple assemblies or sub-samplings are used)  
-- Add **Krona** plots from Kraken2 output for interactive taxonomy visualization  
-- Add **multi-sample support** (looping over many read files) using Nextflow channels  
-- Add **HTML summary reports** combining QUAST, Kraken2, Abricate, and Bakta results  
-- Add **unit tests / CI** (e.g., GitHub Actions) for basic pipeline validation and reproducibility  
+- Add **CheckM** for genome completeness estimation  
+- Add **Krona** plots from Kraken2 output for interactive taxonomy visualization
