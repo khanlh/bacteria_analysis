@@ -82,19 +82,9 @@ results/
 
 ## 4. Pipeline Execution
 
-### Conda
-```
-nextflow run main.nf --reads sample.fastq.gz --outdir results -profile conda
-```
-
 ### Docker
 ```
 nextflow run main.nf --reads sample.fastq.gz --outdir results -profile docker
-```
-
-### SLURM HPC
-```
-nextflow run main.nf --reads sample.fastq.gz --outdir results -profile slurm
 ```
 
 ## 5. Pipeline Steps Overview
