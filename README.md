@@ -1,5 +1,5 @@
 # ONT Long-read Bacterial Identification Pipeline
-Flye → Medaka → QUAST → Prokka → GTDB-Tk → Abricate → Bakta
+Nanofilt → Flye → Medaka → QUAST → Prokka → GTDB-Tk → Abricate → Bakta
 
 This pipeline performs bacterial genome reconstruction and taxonomic identification from Oxford Nanopore Technologies (ONT) long-read sequencing data. It includes read filtering, genome assembly, polishing, quality assessment, annotation, taxonomic classification, and antimicrobial/virulence gene detection.
 
