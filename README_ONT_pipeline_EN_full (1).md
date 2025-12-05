@@ -116,25 +116,12 @@ results/gtdbtk/
 
 ## 4. Pipeline Execution
 
-### Conda
-
-```bash
-nextflow run main.nf   --reads sample.fastq.gz   --outdir results   --tax_method kraken2   -profile conda
-```
 
 ### Docker
 
 ```bash
 nextflow run main.nf   --reads sample.fastq.gz   --outdir results   --tax_method kraken2   -profile docker   --kraken2_db /path/to/kraken2_db   --bakta_db /path/to/bakta_db   --gtdbtk_db /path/to/gtdbtk_db
 ```
-
-### SLURM HPC
-
-```bash
-nextflow run main.nf   --reads sample.fastq.gz   --outdir results   --tax_method kraken2   -profile slurm
-```
-
-> Note: All database directories must be mounted explicitly when running with Docker/Singularity (e.g. using `-with-docker` and appropriate `docker.runOptions` or bind mounts).
 
 ---
 
