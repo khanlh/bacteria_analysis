@@ -35,7 +35,7 @@ The workflow is implemented using Nextflow, enabling reproducibility, scalabilit
 | Medaka    | Assembly polishing                              | ONT model file (bundled with installation)                                                           | https://github.com/nanoporetech/medaka |
 | QUAST     | Assembly quality assessment                     | Optional reference genome                                                                            | https://github.com/ablab/quast |
 | Prokka    | Bacterial genome annotation                     | Bundled Prokka DB or custom DB                                                                      | https://github.com/tseemann/prokka |
-| Kraken2   | **Primary taxonomic classification**            | Kraken2 database (Standard / MiniKraken2 / custom; ~16–20 GB for smaller DBs)                        | https://github.com/DerrickWood/kraken2 |
+| Kraken2   | **Primary taxonomic classification**            | Kraken2 database (Standard / MiniKraken2 / custom; ~17 GB for smaller DBs)                        | https://github.com/DerrickWood/kraken2 |
 | GTDB-Tk   | Optional high-resolution taxonomy               | **GTDB Reference Database (>100 GB)** downloaded separately                                       | https://github.com/Ecogenomics/GTDBTk |
 | Abricate  | AMR & virulence gene screening                  | CARD / VFDB / ResFinder, etc.                                                                        | https://github.com/tseemann/abricate |
 | Bakta     | High-quality bacterial annotation               | Bakta reference database                                                                             | https://github.com/oschwengers/bakta |
@@ -194,7 +194,7 @@ Rapid bacterial genome annotation based on the polished assembly.
 
 ### Step 7 — Kraken2 (default taxonomy)  
 
-Primary taxonomic assignment using Kraken2 with a compact (~16–20 GB) database, suitable for repeated runs and limited storage environments.
+Primary taxonomic assignment using Kraken2 with a compact (~17GB) database, suitable for repeated runs and limited storage environments.
 
 **Outputs (in `results/kraken2/kraken2_out/`):**  
 - `kraken2.report` – taxonomy summary per taxon  
@@ -206,7 +206,7 @@ If Kraken2 is chosen (default), GTDB-Tk is skipped unless explicitly requested.
 
 ### Optional Step — GTDB-Tk  
 
-GTDB-Tk can be used instead of Kraken2 for high-resolution taxonomy, but requires a very large GTDB database (80–200+ GB).  
+GTDB-Tk can be used instead of Kraken2 for high-resolution taxonomy, but requires a very large GTDB database (>100GB).  
 This step is controlled by `--tax_method gtdbtk` and is disabled by default.
 
 **Outputs (in `results/gtdbtk/gtdbtk_out/`):**  
