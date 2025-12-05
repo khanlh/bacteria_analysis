@@ -1,3 +1,1 @@
-# ONT Long-read Bacterial Identification Pipeline
 
-Full README content here...
