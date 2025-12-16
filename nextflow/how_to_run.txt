@@ -1,0 +1,8 @@
+nextflow run main.nf \
+  -profile docker \
+  --reads sample.fastq.gz \
+  --outdir results \
+  --threads 100 \
+  --gtdbtk_db /usr/GTDB-Tk/release220 \
+  --bakta_db /data/for_others/bakta_db/db-light \
+  --bakta_vfdb /data/for_others/bakta_vfdb/VFDB_setB_pro_bakta.fas
