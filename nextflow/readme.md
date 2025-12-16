@@ -39,6 +39,3 @@ nextflow run main.nf \
   --bakta_vfdb /data/for_others/bakta_vfdb/VFDB_setB_pro_bakta.fas
 ```
 
-### Notes
-
-- Ensure that **SRA Toolkit** is installed and available in your `$PATH`.
