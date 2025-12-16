@@ -15,6 +15,7 @@ wget https://sra-download.ncbi.nlm.nih.gov/traces/sra43/SRR/031/SRR31210304/SRR3
 After downloading the `.sra` file, convert it to FASTQ format using **SRA Toolkit**:
 
 ```bash
+source /data/conda_envs/sratoolkit-env/bin/activate
 fasterq-dump SRR31210304.sra --threads 8
 gzip SRR31210304.fastq
 ```
